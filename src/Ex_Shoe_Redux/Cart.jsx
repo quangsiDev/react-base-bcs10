@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class Cart extends Component {
+class Cart extends Component {
   render() {
     console.log(this.props);
     return (
@@ -51,3 +52,9 @@ export default class Cart extends Component {
     );
   }
 }
+let mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  };
+};
+export default connect(mapStateToProps)(Cart);

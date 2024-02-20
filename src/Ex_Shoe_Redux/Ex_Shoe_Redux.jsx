@@ -195,7 +195,7 @@ export default class Ex_Shoe_Redux extends Component {
   render() {
     return (
       <div className="row w-100">
-        <Cart cart={this.state.cart} />
+        <Cart />
         <List handleAddToCart={this.handleAddToCart} handleViewDetail={this.handleChangeDetail} />
         <Detail />
       </div>
