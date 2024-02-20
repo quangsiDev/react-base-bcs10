@@ -11,6 +11,8 @@ import Ex_Car from "./Ex_Car/Ex_Car";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 import DemoProps from "./DemoProps/DemoProps";
 import Ex_Shoe from "./Ex_Shoe/Ex_Shoe";
+import DemoRedux from "./DemoRedux/DemoRedux";
+import Ex_Shoe_Redux from "./Ex_Shoe_Redux/Ex_Shoe_Redux";
 
 function App() {
   return (
@@ -30,7 +32,10 @@ function App() {
       {/* <RenderWithMap /> */}
       {/* --- Day 3 --- */}
       {/* <DemoProps /> */}
-      <Ex_Shoe />
+      {/* <Ex_Shoe /> */}
+      {/* --- Day 5 Redux --- */}
+      {/* <DemoRedux /> */}
+      <Ex_Shoe_Redux />
     </div>
   );
 }

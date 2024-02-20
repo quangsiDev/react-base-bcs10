@@ -14,3 +14,16 @@
 
 
 - Props : tương tác ( truyền data ) giữa 2 components cha con
+
+
+
+--- Redux ---
+
+reducer : viết logic update state
+
+
+mapStateToProps: lấy data từ Redux về
+
+
+
+mapDispatchToProps: đẩy data lên Redux

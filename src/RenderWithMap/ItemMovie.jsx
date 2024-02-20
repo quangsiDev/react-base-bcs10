@@ -5,3 +5,5 @@ export default class ItemMovie extends Component {
     return <div>ItemMovie</div>;
   }
 }
+
+// npm i redux react-redux
