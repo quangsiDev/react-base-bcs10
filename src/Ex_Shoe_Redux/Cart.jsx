@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { deleteShoeAction } from "./redux/action";
 
 class Cart extends Component {
   render() {
@@ -41,7 +42,14 @@ class Cart extends Component {
                     />
                   </td>
                   <td>
-                    <button className="btn-danger">Delete</button>
+                    <button
+                      onClick={() => {
+                        this.props.handleDelete(item.id);
+                      }}
+                      className="btn-danger"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );
@@ -57,4 +65,11 @@ let mapStateToProps = (state) => {
     cart: state.cart,
   };
 };
-export default connect(mapStateToProps)(Cart);
+let mapDispatchToProps = (dispatch) => {
+  return {
+    handleDelete: (id) => {
+      dispatch(deleteShoeAction(id));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

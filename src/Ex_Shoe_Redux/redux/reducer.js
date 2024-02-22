@@ -1,3 +1,6 @@
+import { lazy } from "react";
+import { ADD_SHOE, DELETE_SHOE, VIEW_DETAIL } from "./constant";
+
 let initialState = {
   shoeArr: [
     {
@@ -157,6 +160,34 @@ let initialState = {
 
 export let shoeReducer = (state = initialState, action) => {
   switch (action.type) {
+    case VIEW_DETAIL: {
+      state.detail = action.payload;
+      return { ...state };
+    }
+    case ADD_SHOE: {
+      let cloneCart = [...state.cart];
+      let index = cloneCart.findIndex((item) => {
+        return item.id == action.payload.id;
+      });
+      if (index == -1) {
+        // ko tìm thấy
+        // tạo object mới từ object cũ có thêm key amout
+        let newShoe = { ...action.payload, amount: 1 };
+        cloneCart.push(newShoe);
+      } else {
+        // tìm thấy => th2
+        // tăng số lượng lên 1
+        cloneCart[index].amount++;
+      }
+      state.cart = cloneCart;
+      return { ...state };
+    }
+    case DELETE_SHOE: {
+      // từ id => index => splice / filter
+      let idShoe = action.payload;
+      let newCart = state.cart.filter((item) => item.id !== idShoe);
+      return { ...state, cart: newCart };
+    }
     default:
       return state;
   }

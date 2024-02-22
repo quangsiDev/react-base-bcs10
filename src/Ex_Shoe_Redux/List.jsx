@@ -5,14 +5,7 @@ import { connect } from "react-redux";
 class List extends Component {
   renderListShoe = () => {
     return this.props.shoeArr.map((item) => {
-      return (
-        <Item
-          handleClickAdd={this.props.handleAddToCart}
-          handleClickView={this.props.handleViewDetail}
-          key={item.id}
-          data={item}
-        />
-      );
+      return <Item key={item.id} data={item} />;
     });
   };
   render() {

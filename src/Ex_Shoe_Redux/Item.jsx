@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { ADD_SHOE, VIEW_DETAIL } from "./redux/constant";
+import { addShoeAction, viewDetailAction } from "./redux/action";
 
-export default class Item extends Component {
+class Item extends Component {
   render() {
     let { image, name } = this.props.data;
     return (
@@ -27,3 +30,19 @@ export default class Item extends Component {
     );
   }
 }
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    handleClickView: (shoe) => {
+      // dispatch 1 function , function return về action
+      dispatch(viewDetailAction(shoe));
+    },
+    handleClickAdd: (shoe) => {
+      dispatch(addShoeAction(shoe));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Item);
+// reducer , case "VIEW_DETAIL"
+// mapDispatchToProps

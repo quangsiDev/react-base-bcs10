@@ -12,6 +12,7 @@ class Detail extends Component {
     );
   }
 }
+// mapStateToProps ~ lấy data từ redux về
 let mapStateToProps = (state) => {
   return {
     shoe: state.detail,
