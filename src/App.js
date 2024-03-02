@@ -35,7 +35,7 @@ function App() {
       {/* <Ex_Shoe /> */}
       {/* --- Day 5 Redux --- */}
       {/* <DemoRedux /> */}
-      <Ex_Shoe_Redux />
+      {/* <Ex_Shoe_Redux /> */}
     </div>
   );
 }

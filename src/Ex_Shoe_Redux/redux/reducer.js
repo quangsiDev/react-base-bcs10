@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import { ADD_SHOE, DELETE_SHOE, VIEW_DETAIL } from "./constant";
 
 let initialState = {
