@@ -31,7 +31,7 @@ function App() {
       {/* <Ex_Car /> */}
       {/* <RenderWithMap /> */}
       {/* --- Day 3 --- */}
-      {/* <DemoProps /> */}
+      <DemoProps />
       {/* <Ex_Shoe /> */}
       {/* --- Day 5 Redux --- */}
       {/* <DemoRedux /> */}

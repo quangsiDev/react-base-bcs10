@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { movieArr } from "./data";
 import ItemMovie from "./ItemMovie";
 
-export default class RenderWithMap extends Component {
-  renderMovieList = () => {
+export default function RenderWithMap() {
+  let renderMovieList = () => {
     return movieArr.map((item) => {
-      return <ItemMovie />;
       return (
         <div className="card text-let col-2">
           <img
@@ -21,7 +20,5 @@ export default class RenderWithMap extends Component {
       );
     });
   };
-  render() {
-    return <div className="row">{this.renderMovieList()}</div>;
-  }
+  return <div className="row">{renderMovieList()}</div>;
 }
